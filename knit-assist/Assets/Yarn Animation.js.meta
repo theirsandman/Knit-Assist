@@ -1,0 +1,58 @@
+- !<AssetImportMetadata/ec574a92-5166-49c6-aba8-de87f682f1a8>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 6e8f863f-49e4-436e-bb4b-4e59fb8107b8
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 6e8f863f-49e4-436e-bb4b-4e59fb8107b8
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> e772e2a6-7220-43fa-a4ec-5dc449fa8147
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/e772e2a6-7220-43fa-a4ec-5dc449fa8147>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 57caa7a2-f1bd-4f56-b1ee-24362a651d00
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    bobAmount: false
+    bobSpeed: false
+    mainApp: false
+    moveDistance: false
+    moveSpeed: false
+    rotationSpeed: false
+    splashDuration: false
+    splashScreen: false
+    yarnBall: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - splashScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      mainApp: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      yarnBall: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      splashDuration: !<float> 5.000000
+      moveDistance: !<float> 3.000000
+      moveSpeed: 1.500000
+      bobAmount: 0.150000
+      bobSpeed: 2.500000
+      rotationSpeed: !<float> 220.000000
+  ScriptTypes:
+    -
+      {}

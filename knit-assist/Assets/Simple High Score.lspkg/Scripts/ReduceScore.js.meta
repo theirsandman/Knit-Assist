@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/32f68789-8f2d-48c7-a614-9cd36f1dbdb8>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 8a12fb9c-2c58-4edf-9434-2c8926dd4f57
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 8a12fb9c-2c58-4edf-9434-2c8926dd4f57
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    AssetLibraryId: 237TWD2nvHZyPXepsTVFit
+  AssetDataMap:
+    JavaScriptAsset: !<own> a6007a91-9be7-40bf-a53a-ef3489c93601
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/a6007a91-9be7-40bf-a53a-ef3489c93601>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: bf2691e9-5f37-f407-609c-740186aad05a
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    gridController: false
+    highScoreController: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - highScoreController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      gridController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}

@@ -1,0 +1,68 @@
+- !<AssetImportMetadata/8e3f4850-c29d-4da8-9e15-f2a16a6ca3eb>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> e75780f8-d8dd-41a7-a5dc-881d69c247de
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> e75780f8-d8dd-41a7-a5dc-881d69c247de
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> fb9faa20-d02c-4fc9-9595-2a8d1eb8a477
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/fb9faa20-d02c-4fc9-9595-2a8d1eb8a477>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: f2b4cf6a-553b-4301-bccb-e9f3ee555126
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    cellSize: false
+    cols: false
+    debugLogs: false
+    gap: false
+    patternData0: false
+    patternData1: false
+    patternData2: false
+    rows: false
+    texBlank: false
+    texCircle: false
+    texDot: false
+    texSlash: false
+    tilePrefab: false
+    uiParent: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - rows: 10
+      cols: 20
+      cellSize: !<float> 5.000000
+      gap: 0.500000
+      tilePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      uiParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      texDot: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      texCircle: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      texSlash: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      texBlank: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      debugLogs: false
+      patternData0: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      patternData1: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      patternData2: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}

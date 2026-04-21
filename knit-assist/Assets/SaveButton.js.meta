@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/d134d58e-5a84-4bf5-8f82-86a1eb3fe73a>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 881560bf-23f9-492c-b7f5-aafc3a2fd92b
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 881560bf-23f9-492c-b7f5-aafc3a2fd92b
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 4aaa52c6-c50b-4f67-ab47-b6d63f1bad45
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/4aaa52c6-c50b-4f67-ab47-b6d63f1bad45>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: a1d050da-8321-4426-8a7f-c238ab83376e
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    highScoreController: false
+    nameInputText: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - highScoreController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      nameInputText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
