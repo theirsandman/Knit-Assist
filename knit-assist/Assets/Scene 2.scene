@@ -22149,28 +22149,41 @@
   ScriptAsset: !<reference> e75780f8-d8dd-41a7-a5dc-881d69c247de
   ScriptInputsDefault:
     rows: true
+    cols: true
+    cellSize: true
+    gap: true
+    tilePrefab: true
+    uiParent: true
+    texDot: true
+    texCircle: true
+    texSlash: true
+    texBlank: true
     debugLogs: true
     patternData0: true
     patternData1: true
     patternData2: true
+    rowCompleteAudio: true
+    patternCompleteAudio: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       rows: 10
       cols: 10
-      cellSize: !<float> 3.000000
-      gap: 0.100000
-      tilePrefab: !<reference.ObjectPrefab> 8058a299-2d0d-4b72-b033-d30321180edc
-      uiParent: !<reference.SceneObject> 19d7e0b6-6615-4fde-a3e6-f11b085b91f5
-      texDot: !<reference.Texture> 55325e6b-7f01-4b3a-9980-27d40f127670
-      texCircle: !<reference.Texture> 1ae6c938-8c3f-4702-a080-47a5dae4bcbc
-      texSlash: !<reference.Texture> 57b8b94f-0212-46c1-a9ad-cb7a9d1d43d1
-      texBlank: !<reference.Texture> e66b6e19-0b2f-4d5b-b300-f1b2a6972e8e
+      cellSize: 0.060000
+      gap: 0.010000
+      tilePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
+      uiParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      texDot: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      texCircle: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      texSlash: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      texBlank: !<reference.Texture> 00000000-0000-0000-0000-000000000000
       debugLogs: false
       patternData0: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       patternData1: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       patternData2: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      rowCompleteAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      patternCompleteAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}

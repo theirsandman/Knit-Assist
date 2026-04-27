@@ -30,9 +30,11 @@
     cols: false
     debugLogs: false
     gap: false
+    patternCompleteAudio: false
     patternData0: false
     patternData1: false
     patternData2: false
+    rowCompleteAudio: false
     rows: false
     texBlank: false
     texCircle: false
@@ -50,9 +52,9 @@
     []
   DefaultScriptInputs:
     - rows: 10
-      cols: 20
-      cellSize: !<float> 5.000000
-      gap: 0.500000
+      cols: 10
+      cellSize: 0.060000
+      gap: 0.010000
       tilePrefab: !<reference.ObjectPrefab> 00000000-0000-0000-0000-000000000000
       uiParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       texDot: !<reference.Texture> 00000000-0000-0000-0000-000000000000
@@ -63,6 +65,8 @@
       patternData0: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       patternData1: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       patternData2: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      rowCompleteAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
+      patternCompleteAudio: !<reference.AudioComponent> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}

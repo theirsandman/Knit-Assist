@@ -12,6 +12,8 @@
     - !<own> 045f42ca-5968-4d57-aa0e-e9a03acd8cd0
     - !<own> 404e7e65-07f7-4183-a74f-c206b1480362
     - !<own> bc00d88f-a4b0-41b5-be4e-0de4a8d2c6ae
+    - !<own> da32d16e-1953-4494-b5d0-9d5812e95f23
+    - !<own> 92d342c2-8585-423d-be37-8e61ed37240f
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -8323,6 +8325,23 @@
     - !<own> 46830f5d-b9bf-4c01-9b87-155e416cab8f
   Components:
     []
+- !<AudioComponent/253ce4c4-368c-48a5-9d79-a1e416e0c902>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 4e113576-48c3-4109-95f8-da3642594bf9
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
 - !<Text/25552ed1-4c53-4c9c-8e7c-d9c8ec0dd2b7>
   PrefabRemaps:
     []
@@ -15089,7 +15108,7 @@
     - da7f4be3-3ef3-4132-afb5-0665d3ad334d: dc6d1c8d-5dee-4c50-6084-d322b12644cd
     - e73f1b7b-909b-47a2-b6ee-80bfb55955cb: 9ff4076f-7be4-49b0-75aa-d9371af8117e
   Name: Splash Screen
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: -100.000000}
@@ -30581,7 +30600,7 @@
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: -30.000000, y: 0.000000, z: -60.000000}
-    Rotation: {x: 0.000000, y: -20.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 20.000000, z: 0.000000}
     Scale: {x: 0.600000, y: 0.600000, z: 0.600000}
     HasSegmentScaleCompensation: false
   Children:
@@ -33874,6 +33893,21 @@
     []
   Components:
     - !<own> e5957def-f467-4eba-95a6-7fa12dc73dd4
+- !<SceneObject/92d342c2-8585-423d-be37-8e61ed37240f>
+  PrefabRemaps:
+    []
+  Name: patternCompleteAudio
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> fcdb696e-296c-442d-8180-8353a0ea7afc
 - !<Text/92f088c6-2665-4574-b3b4-62b85cb14d01>
   PrefabRemaps:
     []
@@ -41739,7 +41773,7 @@
   PrefabRemaps:
     []
   Name: Main App
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -42580,6 +42614,7 @@
   Enabled: true
   ScriptAsset: !<reference> b97ebef5-aae4-4003-b701-75f47d97dcb1
   ScriptInputsDefault:
+    autoShowHide: true
     _appearance: true
     _padding: true
     allowNonUniformScaling: true
@@ -42610,7 +42645,7 @@
     {}
   ScriptInputs:
     "":
-      autoShowHide: false
+      autoShowHide: true
       _appearance: Large
       _innerSize: !<Vec2> {x: 32.000000, y: 43.000000}
       _padding: !<Vec2> {x: 0.000000, y: 0.000000}
@@ -48150,6 +48185,21 @@
     - !<own> d045b57e-1b0f-4bbf-8d6a-6944dd961501
     - !<own> 8460708c-1e45-4ef3-a58b-8adb3756eae4
     - !<own> 3e4479f0-7cc5-4325-95ee-d3fae31885e9
+- !<SceneObject/da32d16e-1953-4494-b5d0-9d5812e95f23>
+  PrefabRemaps:
+    []
+  Name: rowCompleteAudio
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 253ce4c4-368c-48a5-9d79-a1e416e0c902
 - !<ScriptComponent/da33d53c-3822-4648-ab30-0b4bf1711426>
   PrefabRemaps:
     []
@@ -50841,7 +50891,7 @@
   ScriptAsset: !<reference> e75780f8-d8dd-41a7-a5dc-881d69c247de
   ScriptInputsDefault:
     rows: true
-    gap: true
+    cols: true
     debugLogs: true
   ScriptTypesDefault:
     {}
@@ -50849,7 +50899,7 @@
     "":
       rows: 10
       cols: 10
-      cellSize: 2.800000
+      cellSize: 2.650000
       gap: 0.500000
       tilePrefab: !<reference.ObjectPrefab> f65f16e0-8851-4d4f-80bc-0ec98f94ce35
       uiParent: !<reference.SceneObject> 9c09eb3a-34d1-4bc0-8b4a-ccc829a2862b
@@ -50861,6 +50911,8 @@
       patternData0: !<reference.ScriptComponent> d81d3bc5-2b3f-4888-80ab-f7db521bd97a
       patternData1: !<reference.ScriptComponent> 1a7629c6-5130-40a9-994d-aef243a4fa26
       patternData2: !<reference.ScriptComponent> 9f11623e-e7ff-4381-9f74-16ffac57ea6c
+      rowCompleteAudio: !<reference.AudioComponent> 253ce4c4-368c-48a5-9d79-a1e416e0c902
+      patternCompleteAudio: !<reference.AudioComponent> fcdb696e-296c-442d-8180-8353a0ea7afc
   ScriptTypes:
     "":
       {}
@@ -56057,6 +56109,23 @@
   ScriptTypes:
     "":
       {}
+- !<AudioComponent/fcdb696e-296c-442d-8180-8353a0ea7afc>
+  PrefabRemaps:
+    []
+  Name: Audio
+  Enabled: true
+  AudioTrack: !<reference> 516823da-938b-40c1-a9f6-2219692e08de
+  EnableAutoplayLoop: false
+  Volume: 1.000000
+  EnableMixToSnap: false
+  RecordVolume: 1.000000
+  EnableSpatialAudio: false
+  EnableDistanceEffect: false
+  CurveType: Logarithm
+  MinDistance: 0.000000
+  MaxDistance: 100.000000
+  EnableDirectivityEffect: false
+  EnablePositionEffect: false
 - !<SceneObject/fcef43bd-47b1-4ccd-bc75-08f80e3fdef9>
   PrefabRemaps:
     []
