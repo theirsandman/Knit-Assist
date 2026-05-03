@@ -5,22 +5,22 @@ import {
 } from 'SpectaclesUIKit.lspkg/Scripts/Visuals/RoundedRectangle/RoundedRectangleVisual';
 import { StateName } from 'SpectaclesUIKit.lspkg/Scripts/Components/Element';
 
-// Primary blue palette
-const DEFAULT_FILL  = new vec4(0.173, 0.357, 0.769, 0.60);
-const HOVER_FILL    = new vec4(0.173, 0.357, 0.769, 0.80);
-const ACTIVE_FILL   = new vec4(0.173, 0.357, 0.769, 1.00);
-const BORDER        = new vec4(1.0,   1.0,   1.0,   1.00); // white
-const BORDER_H      = new vec4(0.282, 0.529, 0.922, 1.00); // blue on hover/triggered
+// Secondary gray palette
+const DEFAULT_FILL  = new vec4(1.0, 1.0, 1.0, 0.10);
+const HOVER_FILL    = new vec4(1.0, 1.0, 1.0, 0.18);
+const ACTIVE_FILL   = new vec4(1.0, 1.0, 1.0, 0.28);
+const BORDER        = new vec4(1.0, 1.0, 1.0, 0.55); // subtle white at rest
+const BORDER_H      = new vec4(1.0, 1.0, 1.0, 0.90); // brighter white on hover/press
 
 @component
-export class UIKitCustomVisualsRectangleButton extends BaseScriptComponent {
+export class UIKitCustomVisualsRectangleButtonSecondary extends BaseScriptComponent {
   onAwake() {
     const button = this.sceneObject.getComponent(
       RectangleButton.getTypeName()
     ) as RectangleButton;
 
     if (!button) {
-      print('UIKitCustomVisualsRectangleButton: RectangleButton not found');
+      print('UIKitCustomVisualsRectangleButtonSecondary: RectangleButton not found');
       return;
     }
 
@@ -78,9 +78,9 @@ export class UIKitCustomVisualsRectangleButton extends BaseScriptComponent {
       vis.hoveredBorderSize   = 0.04;
       vis.triggeredBorderSize = 0.05;
 
-      vis.borderDefaultColor   = BORDER;   // white at rest
-      vis.borderHoveredColor   = BORDER_H; // blue on hover
-      vis.borderTriggeredColor = BORDER_H; // blue on press
+      vis.borderDefaultColor   = BORDER;
+      vis.borderHoveredColor   = BORDER_H;
+      vis.borderTriggeredColor = BORDER_H;
     });
   }
 }

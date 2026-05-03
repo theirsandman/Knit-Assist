@@ -9,8 +9,8 @@ import { StateName } from 'SpectaclesUIKit.lspkg/Scripts/Components/Element';
 const DEFAULT_FILL  = new vec4(0.173, 0.357, 0.769, 0.60);
 const HOVER_FILL    = new vec4(0.173, 0.357, 0.769, 0.80);
 const ACTIVE_FILL   = new vec4(0.173, 0.357, 0.769, 1.00);
-const BORDER        = new vec4(1.0,   1.0,   1.0,   1.00); // white
-const BORDER_H      = new vec4(0.282, 0.529, 0.922, 1.00); // blue on hover/triggered
+const BORDER        = new vec4(0.282, 0.529, 0.922, 1.00);
+const BORDER_H      = new vec4(0.400, 0.650, 1.000, 1.00);
 
 @component
 export class UIKitCustomVisualsRectangleButton extends BaseScriptComponent {
@@ -78,9 +78,9 @@ export class UIKitCustomVisualsRectangleButton extends BaseScriptComponent {
       vis.hoveredBorderSize   = 0.04;
       vis.triggeredBorderSize = 0.05;
 
-      vis.borderDefaultColor   = BORDER;   // white at rest
-      vis.borderHoveredColor   = BORDER_H; // blue on hover
-      vis.borderTriggeredColor = BORDER_H; // blue on press
+      vis.borderDefaultColor   = BORDER;
+      vis.borderHoveredColor   = BORDER_H;
+      vis.borderTriggeredColor = BORDER_H;
     });
   }
 }
