@@ -950,6 +950,12 @@
     projectNameText: true
     gridController: true
     toggleGroup: true
+    referenceImage0: true
+    referenceImage1: true
+    referenceImage2: true
+    referenceDisplay: true
+    progressBarFill: true
+    progressText: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -958,6 +964,12 @@
       projectNameText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       gridController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       toggleGroup: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      referenceImage0: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      referenceImage1: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      referenceImage2: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      referenceDisplay: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      progressBarFill: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      progressText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}

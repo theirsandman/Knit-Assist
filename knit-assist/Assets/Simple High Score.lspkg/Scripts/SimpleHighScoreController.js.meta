@@ -27,7 +27,13 @@
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
     gridController: false
+    progressBarFill: false
+    progressText: false
     projectNameText: false
+    referenceDisplay: false
+    referenceImage0: false
+    referenceImage1: false
+    referenceImage2: false
     scoreText: false
     toggleGroup: false
   ScriptTypesHidden:
@@ -43,6 +49,12 @@
       projectNameText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       gridController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       toggleGroup: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      referenceImage0: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      referenceImage1: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      referenceImage2: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      referenceDisplay: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      progressBarFill: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      progressText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}

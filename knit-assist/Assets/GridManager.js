@@ -218,7 +218,10 @@ function setActive(row, col) {
 
 // ---------- Movement ----------
 function rowGoesLeftToRight(row) {
-    return row % 2 === 0;
+    // Bottom row (rows-1) is RS, reads right to left
+    // Flip based on distance from bottom
+    var rowFromBottom = script.rows - 1 - row;
+    return rowFromBottom % 2 !== 0; // odd rows from bottom go left-to-right
 }
 
 function addStitch() {
@@ -227,28 +230,19 @@ function addStitch() {
     if (leftToRight) {
         if (currentCol < script.cols - 1) {
             currentCol++;
-        } else if (currentRow < script.rows - 1) {
-            currentRow++;
+        } else if (currentRow > 0) {
+            currentRow--;
             currentCol = script.cols - 1;
-            playRowComplete();
-        } else {
-            playPatternComplete();
-            resetPattern();         // ← restart from row 0
         }
     } else {
         if (currentCol > 0) {
             currentCol--;
-        } else if (currentRow < script.rows - 1) {
-            currentRow++;
+        } else if (currentRow > 0) {
+            currentRow--;
             currentCol = 0;
-            playRowComplete();
-        } else {
-            playPatternComplete();
-            resetPattern();         // ← restart from row 0
         }
     }
 
-    print("[Grid] addStitch row:" + currentRow + " col:" + currentCol);
     setActive(currentRow, currentCol);
 }
 
@@ -264,21 +258,23 @@ script.addStitch = addStitch;
 
 function prevStitch() {
     var leftToRight = rowGoesLeftToRight(currentRow);
+
     if (leftToRight) {
         if (currentCol > 0) {
             currentCol--;
-        } else if (currentRow > 0) {
-            currentRow--;
-            currentCol = script.cols - 1;
+        } else if (currentRow < script.rows - 1) {
+            currentRow++;
+            currentCol = 0;
         }
     } else {
         if (currentCol < script.cols - 1) {
             currentCol++;
-        } else if (currentRow > 0) {
-            currentRow--;
-            currentCol = 0;
+        } else if (currentRow < script.rows - 1) {
+            currentRow++;
+            currentCol = script.cols - 1;
         }
     }
+
     setActive(currentRow, currentCol);
 }
 
@@ -305,8 +301,13 @@ script.createEvent("OnStartEvent").bind(function () {
     print("[Grid] OnStart Fired");
     pattern = getPatternForProjectIndex(0);
     spawnGrid();
-    setRowHighlight(0, true);
-    setActive(0, 0);
+    
+    // Start at bottom-right instead of top-left
+    currentRow = script.rows - 1;
+    currentCol = script.cols - 1;
+    
+    setRowHighlight(currentRow, true);
+    setActive(currentRow, currentCol);
 
     global.knitAssistGrid = {
         loadPattern:          loadPattern,
