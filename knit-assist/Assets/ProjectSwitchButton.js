@@ -1,17 +1,21 @@
 // @input Component.ScriptComponent highScoreController
 // @input int projectIndex = 0
-
-var isReady = false;
-
-script.createEvent("OnStartEvent").bind(function() {
-    isReady = true;
-});
+// @input SceneObject mainApp
+// @input SceneObject loadPreviousProjectScreen
 
 function onTap() {
-    if (!isReady) { return; }
-    var fn = script.highScoreController && script.highScoreController.loadProject;
-    if (typeof fn === "function") {
-        fn.call(script.highScoreController, script.projectIndex);
+    print("[PSB] onTap fired! index: " + script.projectIndex);
+
+    if (script.mainApp) {
+        script.mainApp.enabled = true;
+    }
+    if (script.loadPreviousProjectScreen) {
+        script.loadPreviousProjectScreen.enabled = false;
+    }
+
+    var ctrl = script.highScoreController;
+    if (ctrl && typeof ctrl.setPendingProject === "function") {
+        ctrl.setPendingProject(script.projectIndex);
     }
 }
 

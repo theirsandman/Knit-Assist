@@ -12,6 +12,9 @@
 
 
 var MAX_PROJECTS = 3;
+var projectLoaded = false;
+
+var pendingProjectIndex = -1;
 
 function getStore() {
     if (global.persistentStorageSystem && global.persistentStorageSystem.store) {
@@ -26,6 +29,8 @@ function keyRow(i) { return "project_" + i + "_row"; }
 function keyCol(i) { return "project_" + i + "_col"; }
 function keyName(i) { return "project_" + i + "_name"; }
 function keyRepeats(i) { return "project_" + i + "_repeats"; }
+function keyLastOpened(i) { return "project_" + i + "_lastOpened"; }
+
 var projectTargets = [40, 30, 20];
 
 function clampProjectIndex(index) {
@@ -36,19 +41,17 @@ function clampProjectIndex(index) {
 }
 
 function applySavedProjectToGrid() {
+    if (!projectLoaded) { return; }
     var s = getStore();
     var savedRow = s ? storeGetNumber(s, keyRow(currentProjectIndex), 9) : 9;
     var savedCol = s ? storeGetNumber(s, keyCol(currentProjectIndex), 9) : 9;
-
     gridLoadPattern(currentProjectIndex);
     gridRestorePosition(savedRow, savedCol);
-
     updateScoreText();
     updateProjectNameText(getProjectName(currentProjectIndex));
     updateReferenceImage(currentProjectIndex);
-    
     var target = projectTargets[currentProjectIndex];
-updateProgressDisplay(getRepeatCount(), target);
+    updateProgressDisplay(getRepeatCount(), target);
 }
 
 function storePutNumber(store, key, value) {
@@ -187,6 +190,9 @@ function saveCurrentProject() {
 }
 
 function loadProject(index) {
+    print("[KnitAssist] loadProject called with index: " + index);
+    print("[KnitAssist] stack: " + new Error().stack);
+    projectLoaded = true;
     saveCurrentProject();
 
     currentProjectIndex = clampProjectIndex(index);
@@ -220,8 +226,24 @@ function loadProject(index) {
     var target = projectTargets[currentProjectIndex];
 updateProgressDisplay(getRepeatCount(), target);
 
+var now = new Date();
+var dateString = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear();
+storePutString(s, keyLastOpened(currentProjectIndex), dateString);
 
+var now = new Date();
+var dateString = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear();
+storePutString(s, keyLastOpened(currentProjectIndex), dateString);
+print("[KnitAssist] Saved last opened date for project " + currentProjectIndex + ": " + dateString);
+    
 }
+
+function getLastOpened(i) {
+    var s = getStore();
+    var result = s ? storeGetString(s, keyLastOpened(i), "N/A") : "Never opened";
+    print("[KnitAssist] getLastOpened project " + i + ": " + result);
+    return result;
+}
+script.getLastOpened = getLastOpened;
 
 
 function incrementRepeats() {
@@ -285,14 +307,20 @@ script.createEvent("OnStartEvent").bind(function() {
 
 var highScoreGridSynced = false;
 script.createEvent("UpdateEvent").bind(function() {
-    if (highScoreGridSynced) {
-        return;
+    if (!highScoreGridSynced) {
+        if (!getKnitGridApi()) { return; }
+        highScoreGridSynced = true;
+        applySavedProjectToGrid();
     }
-    if (!getKnitGridApi()) {
-        return;
+    
+    // Handle pending project load from button press
+    if (pendingProjectIndex !== -1) {
+        if (getKnitGridApi()) {
+            var idx = pendingProjectIndex;
+            pendingProjectIndex = -1;
+            loadProject(idx);
+        }
     }
-    highScoreGridSynced = true;
-    applySavedProjectToGrid();
 });
 
 function updateReferenceImage(index) {
@@ -332,4 +360,7 @@ script.reduceScore = reduceScore;
 script.loadProject = loadProject;
 script.saveCurrentProject = saveCurrentProject;
 script.saveProjectName = saveProjectName;
+script.setPendingProject = function(index) {
+    pendingProjectIndex = index;
+};
 

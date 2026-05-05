@@ -299,26 +299,24 @@ script.getPatternsCompleted = getPatternsCompleted;
 // ---------- Start ----------
 script.createEvent("OnStartEvent").bind(function () {
     print("[Grid] OnStart Fired");
-    pattern = getPatternForProjectIndex(0);
+
+    // Start with blank pattern, loadProject will set the real one
+    pattern = buildBlankPattern(script.rows, script.cols);
+
     spawnGrid();
-    
-    // Start at bottom-right instead of top-left
-    currentRow = script.rows - 1;
-    currentCol = script.cols - 1;
-    
-    setRowHighlight(currentRow, true);
-    setActive(currentRow, currentCol);
+    setRowHighlight(script.rows - 1, true);
+    setActive(script.rows - 1, script.cols - 1);
 
     global.knitAssistGrid = {
-        loadPattern:          loadPattern,
-        restorePosition:      restorePosition,
-        getCurrentRow:        getCurrentRow,
-        getCurrentCol:        getCurrentCol,
-        addStitch:            addStitch,
-        prevStitch:           prevStitch,
-        spawnGrid:            spawnGrid,
-        getPatternsCompleted: getPatternsCompleted
+        loadPattern: loadPattern,
+        restorePosition: restorePosition,
+        getCurrentRow: getCurrentRow,
+        getCurrentCol: getCurrentCol,
+        addStitch: addStitch,
+        prevStitch: prevStitch
     };
 
     print("[Grid] OnStart done");
 });
+
+

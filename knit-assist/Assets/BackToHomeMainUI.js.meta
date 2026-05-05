@@ -1,20 +1,20 @@
-- !<AssetImportMetadata/0869aaa6-658e-45ac-ad4c-36d0839bf56e>
+- !<AssetImportMetadata/4d6e4499-d829-4f0d-8a3a-989df5fe814c>
   ImportedAssetIds:
-    JavaScriptAsset: !<reference> 8327d70e-f9c3-458a-b92f-5a4f599ebef7
+    JavaScriptAsset: !<reference> 945eca63-1298-443d-ae4f-a51f94d7d1da
   ImporterName: JavaScriptAssetImporter
-  PrimaryAsset: !<reference> 8327d70e-f9c3-458a-b92f-5a4f599ebef7
+  PrimaryAsset: !<reference> 945eca63-1298-443d-ae4f-a51f94d7d1da
   PackageType: NotAPackage
   LegacyPackagePolicy: ~
   ExtraData:
     {}
   AssetDataMap:
-    JavaScriptAsset: !<own> a7de71bb-afad-4295-8a07-cdcbb5d96d2b
+    JavaScriptAsset: !<own> d6475a26-f518-438d-bef1-00910fbc09d2
   DependentFiles:
     []
   ImporterSettings: !<AssetImporterSettings>
     {}
   CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
-- !<ScriptAssetData/a7de71bb-afad-4295-8a07-cdcbb5d96d2b>
+- !<ScriptAssetData/d6475a26-f518-438d-bef1-00910fbc09d2>
   SvgIcon: ""
   SetupScript:
     code: ""
@@ -22,14 +22,17 @@
   VersionMajor: 0
   VersionMinor: 0
   VersionPatch: 0
-  ComponentUid: ebaaab4d-38b0-4c6b-a2ac-badc1e6c56c4
+  ComponentUid: 3f5da90e-262e-4779-90b0-705efc40acbc
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    dateText0: false
+    dateText1: false
+    dateText2: false
     highScoreController: false
+    homeScreen: false
     loadPreviousProjectScreen: false
     mainApp: false
-    projectIndex: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -39,10 +42,13 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - highScoreController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
-      projectIndex: 0
+    - homeScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       mainApp: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       loadPreviousProjectScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      highScoreController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      dateText0: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      dateText1: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      dateText2: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
