@@ -941,6 +941,8 @@
     referenceDisplay: true
     progressBarFill: true
     progressText: true
+    celebrationScreen: true
+    mainAppScreen: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -955,6 +957,8 @@
       referenceDisplay: !<reference.Image> 00000000-0000-0000-0000-000000000000
       progressBarFill: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       progressText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      celebrationScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      mainAppScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}

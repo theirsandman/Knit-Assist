@@ -1,0 +1,44 @@
+- !<AssetImportMetadata/39fc019d-5840-4746-a791-6f92944c4175>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> a1930682-b550-44cb-af9c-f6ab9b84e986
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> a1930682-b550-44cb-af9c-f6ab9b84e986
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> bf853722-fc4b-4c3a-97e0-c74e95be2f95
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/bf853722-fc4b-4c3a-97e0-c74e95be2f95>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 52325764-9eca-4fa1-8dd1-a8be7e89239f
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    stepperController: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - stepperController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Component.ScriptComponent stepperController

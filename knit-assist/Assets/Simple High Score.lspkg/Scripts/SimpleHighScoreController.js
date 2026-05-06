@@ -9,12 +9,14 @@
 // @input Component.Image referenceDisplay
 // @input Component.ScriptComponent progressBarFill
 // @input Component.Text progressText
-
+// @input SceneObject celebrationScreen
+// @input SceneObject mainAppScreen
 
 var MAX_PROJECTS = 3;
 var projectLoaded = false;
-
 var pendingProjectIndex = -1;
+var pendingIsNewProject = false;
+var pendingIterations = 1;
 
 function getStore() {
     if (global.persistentStorageSystem && global.persistentStorageSystem.store) {
@@ -30,6 +32,7 @@ function keyCol(i) { return "project_" + i + "_col"; }
 function keyName(i) { return "project_" + i + "_name"; }
 function keyRepeats(i) { return "project_" + i + "_repeats"; }
 function keyLastOpened(i) { return "project_" + i + "_lastOpened"; }
+function keyIterations(i) { return "project_" + i + "_iterations"; }
 
 var projectTargets = [40, 30, 20];
 
@@ -56,30 +59,15 @@ function applySavedProjectToGrid() {
 
 function storePutNumber(store, key, value) {
     var v = Math.round(Number(value));
-    if (typeof store.putInt === "function") {
-        store.putInt(key, v);
-        return;
-    }
-    if (typeof store.putFloat === "function") {
-        store.putFloat(key, v);
-        return;
-    }
-    if (typeof store.putString === "function") {
-        store.putString(key, v.toString());
-    }
+    if (typeof store.putInt === "function") { store.putInt(key, v); return; }
+    if (typeof store.putFloat === "function") { store.putFloat(key, v); return; }
+    if (typeof store.putString === "function") { store.putString(key, v.toString()); }
 }
 
 function storeGetNumber(store, key, defaultIfMissing) {
-    if (typeof store.has === "function" && !store.has(key)) {
-        return defaultIfMissing;
-    }
-
-    if (typeof store.getInt === "function") {
-        return store.getInt(key);
-    }
-    if (typeof store.getFloat === "function") {
-        return Math.round(store.getFloat(key));
-    }
+    if (typeof store.has === "function" && !store.has(key)) { return defaultIfMissing; }
+    if (typeof store.getInt === "function") { return store.getInt(key); }
+    if (typeof store.getFloat === "function") { return Math.round(store.getFloat(key)); }
     if (typeof store.getString === "function") {
         var raw = store.getString(key);
         if (raw === "") { return defaultIfMissing; }
@@ -90,24 +78,18 @@ function storeGetNumber(store, key, defaultIfMissing) {
 }
 
 function storePutString(store, key, value) {
-    if (typeof store.putString === "function") {
-        store.putString(key, value);
-    }
+    if (typeof store.putString === "function") { store.putString(key, value); }
 }
 
 function storeGetString(store, key, fallback) {
     if (typeof store.getString === "function") {
         var value = store.getString(key);
-        if (value !== undefined && value !== null && value !== "") {
-            return value;
-        }
+        if (value !== undefined && value !== null && value !== "") { return value; }
     }
     return fallback;
 }
 
-function defaultProjectName(i) {
-    return "Project " + (i + 1);
-}
+function defaultProjectName(i) { return "Project " + (i + 1); }
 
 function getKnitGridApi() {
     var api = global.knitAssistGrid;
@@ -123,16 +105,12 @@ function getKnitGridApi() {
 
 function gridLoadPattern(projectIndex) {
     var api = getKnitGridApi();
-    if (api) {
-        api.loadPattern(projectIndex);
-    }
+    if (api) { api.loadPattern(projectIndex); }
 }
 
 function gridRestorePosition(row, col) {
     var api = getKnitGridApi();
-    if (api) {
-        api.restorePosition(row, col);
-    }
+    if (api) { api.restorePosition(row, col); }
 }
 
 var sInit = getStore();
@@ -170,10 +148,8 @@ function saveCurrentProject() {
     try {
         var s = getStore();
         if (!s) { return; }
-
         var i = currentProjectIndex;
         storePutNumber(s, keyScore(i), currentScore);
-
         var grid = getKnitGridApi();
         if (grid) {
             var r = grid.getCurrentRow();
@@ -191,15 +167,12 @@ function saveCurrentProject() {
 
 function loadProject(index) {
     print("[KnitAssist] loadProject called with index: " + index);
-    print("[KnitAssist] stack: " + new Error().stack);
     projectLoaded = true;
     saveCurrentProject();
 
     currentProjectIndex = clampProjectIndex(index);
     var s = getStore();
-    if (s) {
-        storePutNumber(s, keyActiveProject(), currentProjectIndex);
-    }
+    if (s) { storePutNumber(s, keyActiveProject(), currentProjectIndex); }
 
     if (s && typeof s.has === "function" && s.has(keyScore(currentProjectIndex))) {
         currentScore = storeGetNumber(s, keyScore(currentProjectIndex), 1);
@@ -211,30 +184,46 @@ function loadProject(index) {
     var savedRow = s ? storeGetNumber(s, keyRow(currentProjectIndex), 9) : 9;
     var savedCol = s ? storeGetNumber(s, keyCol(currentProjectIndex), 9) : 9;
 
-    print("[KnitAssist] Loading project " + currentProjectIndex + 
-      " row:" + savedRow + " col:" + savedCol + 
-      " score:" + currentScore);
-    
-    
+    print("[KnitAssist] Loading project " + currentProjectIndex +
+        " row:" + savedRow + " col:" + savedCol +
+        " score:" + currentScore);
+
     gridLoadPattern(currentProjectIndex);
     gridRestorePosition(savedRow, savedCol);
 
     updateScoreText();
     updateProjectNameText(getProjectName(currentProjectIndex));
     updateReferenceImage(currentProjectIndex);
-    
+
     var target = projectTargets[currentProjectIndex];
-updateProgressDisplay(getRepeatCount(), target);
+    updateProgressDisplay(getRepeatCount(), target);
 
-var now = new Date();
-var dateString = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear();
-storePutString(s, keyLastOpened(currentProjectIndex), dateString);
+    var now = new Date();
+    var dateString = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear();
+    storePutString(s, keyLastOpened(currentProjectIndex), dateString);
+    print("[KnitAssist] Saved last opened date for project " + currentProjectIndex + ": " + dateString);
+}
 
-var now = new Date();
-var dateString = (now.getMonth() + 1) + "/" + now.getDate() + "/" + now.getFullYear();
-storePutString(s, keyLastOpened(currentProjectIndex), dateString);
-print("[KnitAssist] Saved last opened date for project " + currentProjectIndex + ": " + dateString);
+function startNewProject(index, iterations) {
+    print("[KnitAssist] startNewProject index:" + index + " iterations:" + iterations);
     
+    var s = getStore();  // ← this line is missing in your current file
+    
+    if (!s) {
+        print("[KnitAssist] startNewProject: no store!");
+        return;
+    }
+
+    storePutNumber(s, keyScore(index), 1);
+    storePutNumber(s, keyRow(index), 9);
+    storePutNumber(s, keyCol(index), 9);
+    storePutNumber(s, keyRepeats(index), 0);
+    storePutNumber(s, keyIterations(index), iterations);
+
+    projectTargets[index] = iterations;
+
+    print("[KnitAssist] startNewProject reset complete, calling loadProject");
+    loadProject(index);
 }
 
 function getLastOpened(i) {
@@ -243,8 +232,6 @@ function getLastOpened(i) {
     print("[KnitAssist] getLastOpened project " + i + ": " + result);
     return result;
 }
-script.getLastOpened = getLastOpened;
-
 
 function incrementRepeats() {
     var s = getStore();
@@ -252,10 +239,9 @@ function incrementRepeats() {
     var current = getRepeatCount();
     var target = projectTargets[currentProjectIndex];
     print("[Progress] incrementRepeats called, current:" + current + " target:" + target);
-    if (current < target) {
-        current++;
-        storePutNumber(s, keyRepeats(currentProjectIndex), current);
-    }
+    
+    current++;
+    storePutNumber(s, keyRepeats(currentProjectIndex), current);
     updateProgressDisplay(current, target);
 }
 
@@ -271,7 +257,6 @@ function reduceScore() {
         updateScoreText();
     }
 }
-
 
 function incrementScore() {
     currentScore++;
@@ -289,39 +274,9 @@ function incrementScore() {
 function saveProjectName(name) {
     if (!name || name === "") { return; }
     var s = getStore();
-    if (s) {
-        storePutString(s, keyName(currentProjectIndex), name);
-    }
+    if (s) { storePutString(s, keyName(currentProjectIndex), name); }
     updateProjectNameText(name);
 }
-
-
-
-script.createEvent("OnStartEvent").bind(function() {
-    print("[KnitAssist] SimpleHighScoreController BUILD knit-assist-2026-04-18-v8");
-    updateScoreText();
-    updateProjectNameText(getProjectName(currentProjectIndex));
-    
-});
-
-
-var highScoreGridSynced = false;
-script.createEvent("UpdateEvent").bind(function() {
-    if (!highScoreGridSynced) {
-        if (!getKnitGridApi()) { return; }
-        highScoreGridSynced = true;
-        applySavedProjectToGrid();
-    }
-    
-    // Handle pending project load from button press
-    if (pendingProjectIndex !== -1) {
-        if (getKnitGridApi()) {
-            var idx = pendingProjectIndex;
-            pendingProjectIndex = -1;
-            loadProject(idx);
-        }
-    }
-});
 
 function updateReferenceImage(index) {
     if (!script.referenceDisplay) { return; }
@@ -336,31 +291,120 @@ function updateProgressDisplay(current, target) {
         script.progressText.text = current + "/" + target;
     }
     if (script.progressBarFill) {
-        var ratio = target > 0 ? current / target : 0;
+        var ratio = target > 0 ? Math.min(current / target, 1.0) : 0;
         var obj = script.progressBarFill.getSceneObject();
         var t = obj.getTransform();
         var fullWidth = 36.0;
         var bgX = -3.0;
-        var leftEdge = bgX - fullWidth / 2; // -21, the left edge of the BG
-
-        // Scale X so fill width = ratio * fullWidth
+        var leftEdge = bgX - fullWidth / 2;
         t.setLocalScale(new vec3(ratio, 1, 1));
-
-        // Keep left edge fixed, grow right
         t.setLocalPosition(new vec3(
             leftEdge + (fullWidth * ratio) / 2,
             -8.035,
             0.02
         ));
     }
+
+    print("[Progress] current:" + current + " target:" + target);
+
+    if (target > 0 && current >= target) {
+        print("[KnitAssist] Project complete! Triggering celebration.");
+        global.pendingCelebration = true;
+    }
 }
 
+script.createEvent("OnStartEvent").bind(function() {
+    print("[KnitAssist] SimpleHighScoreController BUILD knit-assist-2026-04-18-v8");
+    updateScoreText();
+    updateProjectNameText(getProjectName(currentProjectIndex));
+});
+
+var highScoreGridSynced = false;
+script.createEvent("UpdateEvent").bind(function() {
+    if (!highScoreGridSynced) {
+        if (!getKnitGridApi()) { return; }
+        highScoreGridSynced = true;
+        applySavedProjectToGrid();
+    }
+
+    if (pendingProjectIndex !== -1) {
+        if (getKnitGridApi()) {
+            var idx = pendingProjectIndex;
+            var isNew = pendingIsNewProject;
+            var iters = pendingIterations;
+            pendingProjectIndex = -1;
+            pendingIsNewProject = false;
+            if (isNew) {
+                startNewProject(idx, iters);
+            } else {
+                loadProject(idx);
+            }
+        }
+    }
+});
+script.createEvent("UpdateEvent").bind(function() {
+    if (!highScoreGridSynced) {
+        if (!getKnitGridApi()) { return; }
+        highScoreGridSynced = true;
+        applySavedProjectToGrid();
+    }
+
+    // Celebration trigger
+    if (global.pendingCelebration) {
+        global.pendingCelebration = false;
+        if (script.celebrationScreen) script.celebrationScreen.enabled = true;
+        if (script.mainAppScreen)     script.mainAppScreen.enabled = false;
+    }
+
+    // Check global fallback from ConfirmButtonIteration
+    if (global.pendingNewProjectIndex !== undefined && global.pendingNewProjectIndex !== -1) {
+        if (getKnitGridApi()) {
+            var idx = global.pendingNewProjectIndex;
+            var iters = global.pendingNewProjectIterations || 1;
+            global.pendingNewProjectIndex = -1;
+            global.pendingNewProjectIterations = -1;
+            print("[KnitAssist] picked up global pending new project index:" + idx + " iters:" + iters);
+            startNewProject(idx, iters);
+        }
+    }
+
+    // Handle pending project load from button press
+    if (pendingProjectIndex !== -1) {
+        if (getKnitGridApi()) {
+            var idx = pendingProjectIndex;
+            var isNew = pendingIsNewProject;
+            var iters = pendingIterations;
+            pendingProjectIndex = -1;
+            pendingIsNewProject = false;
+            if (isNew) {
+                startNewProject(idx, iters);
+            } else {
+                loadProject(idx);
+            }
+        }
+    }
+});
+
+// these must all be at the very bottom of SimpleHighScoreController.js
 script.incrementScore = incrementScore;
 script.reduceScore = reduceScore;
 script.loadProject = loadProject;
+script.startNewProject = startNewProject;
 script.saveCurrentProject = saveCurrentProject;
 script.saveProjectName = saveProjectName;
+script.getLastOpened = getLastOpened;
 script.setPendingProject = function(index) {
     pendingProjectIndex = index;
+    pendingIsNewProject = false;
 };
+script.setPendingNewProject = function(index, iterations) {
+    pendingProjectIndex = index;
+    pendingIsNewProject = true;
+    pendingIterations = iterations;
+};
+print("[KnitAssist] setPendingNewProject exposed: " + typeof script.setPendingNewProject);
 
+script.getIterations = function(i) {
+    var s = getStore();
+    return s ? storeGetNumber(s, keyIterations(i), 1) : 1;
+};

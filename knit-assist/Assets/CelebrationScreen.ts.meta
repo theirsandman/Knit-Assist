@@ -1,0 +1,68 @@
+- !<AssetImportMetadata/6e228afe-93b5-4120-8886-bec4736e6cd0>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> e9faa22c-0907-4fea-a5f6-88bb2e0c6f78
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> e9faa22c-0907-4fea-a5f6-88bb2e0c6f78
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> b11002fd-4aa0-4873-babd-1c4b4423e10f
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/b11002fd-4aa0-4873-babd-1c4b4423e10f>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: e2bb6657-8b17-429d-9505-209273718ff5
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    celebrationScreen: false
+    difficultyText: false
+    highScoreController: false
+    iterationsText: false
+    patternImage: false
+    patternNameText: false
+    thumbnail0: false
+    thumbnail1: false
+    thumbnail2: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - celebrationScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      highScoreController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      patternNameText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      difficultyText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      iterationsText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      patternImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      thumbnail0: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      thumbnail1: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      thumbnail2: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject celebrationScreen
+    - // @input Component.ScriptComponent highScoreController
+    - // @input Component.Text patternNameText
+    - // @input Component.Text difficultyText
+    - // @input Component.Text iterationsText
+    - // @input Component.Image patternImage
+    - // @input Asset.Texture thumbnail0
+    - // @input Asset.Texture thumbnail1
+    - // @input Asset.Texture thumbnail2

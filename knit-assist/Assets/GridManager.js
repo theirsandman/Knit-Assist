@@ -171,7 +171,6 @@ function spawnGrid() {
         return;
     }
     var parent = script.uiParent ? script.uiParent : script.getSceneObject();
-    log("Spawning under: " + (script.uiParent ? "uiParent" : "GridManager"));
     for (var r = 0; r < script.rows; r++) {
         tiles[r] = [];
         for (var c = 0; c < script.cols; c++) {
@@ -180,7 +179,6 @@ function spawnGrid() {
             var y = -(r - (script.rows - 1) / 2) * (script.cellSize + script.gap) + 5;
             tile.getTransform().setLocalPosition(new vec3(x, y, 0));
             tile.getTransform().setLocalScale(new vec3(script.cellSize, script.cellSize, 1));
-            print("[Grid] Tile spawned at x:" + x + " y:" + y + " parent:" + parent.name);
             tiles[r][c] = tile;
             var stitchType = "BLANK";
             if (pattern[r] && pattern[r][c]) stitchType = pattern[r][c];
@@ -298,7 +296,6 @@ script.getPatternsCompleted = getPatternsCompleted;
 
 // ---------- Start ----------
 script.createEvent("OnStartEvent").bind(function () {
-    print("[Grid] OnStart Fired");
 
     // Start with blank pattern, loadProject will set the real one
     pattern = buildBlankPattern(script.rows, script.cols);
@@ -316,7 +313,6 @@ script.createEvent("OnStartEvent").bind(function () {
         prevStitch: prevStitch
     };
 
-    print("[Grid] OnStart done");
 });
 
 

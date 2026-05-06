@@ -1,0 +1,62 @@
+- !<AssetImportMetadata/2697461a-c207-410a-8736-5f263ee1f42a>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> fea54438-2e57-4a19-90a5-008dcf9257e9
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> fea54438-2e57-4a19-90a5-008dcf9257e9
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 61ff3cd4-bcb7-4bd1-a3e3-84b87d20adbc
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/61ff3cd4-bcb7-4bd1-a3e3-84b87d20adbc>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 03ffdf34-226e-4ee4-97a3-22a9a4d70077
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    difficultyLabel: false
+    iterationScreen: false
+    newProjectScreen: false
+    patternIndex: false
+    patternName: false
+    selectedDiffLabel: false
+    selectedPatternLabel: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - newProjectScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      iterationScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      selectedPatternLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      selectedDiffLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      patternName: Pattern Title
+      difficultyLabel: Easy
+      patternIndex: !<float> 0.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject newProjectScreen
+    - // @input SceneObject iterationScreen
+    - // @input Component.Text selectedPatternLabel
+    - // @input Component.Text selectedDiffLabel
+    - '// @input string patternName = "Pattern Title"'
+    - '// @input string difficultyLabel = "Easy"'
+    - // @input float patternIndex

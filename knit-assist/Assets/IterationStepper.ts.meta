@@ -1,0 +1,50 @@
+- !<AssetImportMetadata/9a14264c-234e-44b6-8cdb-8d78c2bba6f2>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> ac7152c8-0753-42ad-87f9-c134a2333c24
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> ac7152c8-0753-42ad-87f9-c134a2333c24
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 8fc004e6-fc97-42d2-a405-45f97ce483cc
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/8fc004e6-fc97-42d2-a405-45f97ce483cc>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 47c535ab-0921-4ec4-ba8a-4ac6fe50e744
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    max: false
+    min: false
+    patternCountText: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - patternCountText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      min: !<float> 1.000000
+      max: !<float> 99.000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Component.Text patternCountText
+    - // @input float min = 1
+    - // @input float max = 99

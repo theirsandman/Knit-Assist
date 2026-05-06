@@ -1,0 +1,53 @@
+- !<AssetImportMetadata/4c1ef5e0-2975-444c-b76c-ac88f75c57d3>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> 1e544ed6-ba7c-4a9b-8645-fb84c2e6d259
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> 1e544ed6-ba7c-4a9b-8645-fb84c2e6d259
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> dfb69eaa-f4b2-4c2a-83e2-a4c90e6941a3
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/dfb69eaa-f4b2-4c2a-83e2-a4c90e6941a3>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: a76eb917-72ff-4a7c-a6c0-fe0dd9517fe3
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    highScoreController: false
+    iterationScreen: false
+    sessionScreen: false
+    stepperController: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - stepperController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      highScoreController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      iterationScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      sessionScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input Component.ScriptComponent stepperController
+    - // @input Component.ScriptComponent highScoreController
+    - // @input SceneObject iterationScreen
+    - // @input SceneObject sessionScreen

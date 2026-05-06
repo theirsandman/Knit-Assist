@@ -1,0 +1,62 @@
+- !<AssetImportMetadata/f959b32d-555d-43a3-b401-b8d904c3f953>
+  ImportedAssetIds:
+    TypeScriptAsset: !<reference> d0d09875-af48-4ad7-98d5-f63ffce1434f
+  ImporterName: TypeScriptAssetImporter
+  PrimaryAsset: !<reference> d0d09875-af48-4ad7-98d5-f63ffce1434f
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    TypeScriptAsset: !<own> 52dea313-868d-4f99-a8cb-415451e609b8
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<TypeScriptAssetData/52dea313-868d-4f99-a8cb-415451e609b8>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: a9eaa758-a73d-4ef4-84ec-0dc17865a7b8
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    difficultyText: false
+    iterationScreen: false
+    patternImage: false
+    patternNameText: false
+    thumbnail0: false
+    thumbnail1: false
+    thumbnail2: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - iterationScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      patternNameText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      difficultyText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      patternImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      thumbnail0: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      thumbnail1: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+      thumbnail2: !<reference.Texture> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
+  InputLines:
+    - // @input SceneObject iterationScreen
+    - // @input Component.Text patternNameText
+    - // @input Component.Text difficultyText
+    - // @input Component.Image patternImage
+    - // @input Asset.Texture thumbnail0
+    - // @input Asset.Texture thumbnail1
+    - // @input Asset.Texture thumbnail2
