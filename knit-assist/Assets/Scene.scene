@@ -12,12 +12,12 @@
     - !<own> 045f42ca-5968-4d57-aa0e-e9a03acd8cd0
     - !<own> 404e7e65-07f7-4183-a74f-c206b1480362
     - !<own> 15bfb376-bc5e-4f4b-a7a6-3fd90686204b
-    - !<own> 86ba0f22-64fd-467e-a747-6ce667d4d20b
-    - !<own> bc00d88f-a4b0-41b5-be4e-0de4a8d2c6ae
     - !<own> da32d16e-1953-4494-b5d0-9d5812e95f23
     - !<own> 92d342c2-8585-423d-be37-8e61ed37240f
+    - !<own> 86ba0f22-64fd-467e-a747-6ce667d4d20b
     - !<own> 240ff965-4125-4b77-a0cc-214cfc45d96c
     - !<own> 0208241a-5be3-45a0-88da-0b798f8a1f2c
+    - !<own> bc00d88f-a4b0-41b5-be4e-0de4a8d2c6ae
     - !<own> 76627e03-7988-4ba2-b5ca-17f903d029b1
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
@@ -271,7 +271,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.739326, y: 8.539093, z: -42.507309}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -6041,7 +6041,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.000000, y: 9.293808, z: -21.700027}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -9394,7 +9394,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.655029, y: 8.603508, z: -42.282471}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -11327,7 +11327,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 35.200001, y: -2.500000, z: 0.000000}
+    Position: {x: 35.200001, y: -2.500000, z: 0.100000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -13455,7 +13455,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: -11.644882, y: 0.000000, z: 0.099998}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 3.000000, y: 3.000000, z: 3.000000}
+    Scale: {x: 2.000000, y: 2.000000, z: 2.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -16246,7 +16246,7 @@
   PrefabRemaps:
     []
   Name: Image
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Fit
   VerticalAlignment: Center
@@ -17490,7 +17490,7 @@
     - da7f4be3-3ef3-4132-afb5-0665d3ad334d: dc6d1c8d-5dee-4c50-6084-d322b12644cd
     - e73f1b7b-909b-47a2-b6ee-80bfb55955cb: 9ff4076f-7be4-49b0-75aa-d9371af8117e
   Name: Splash Screen
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: -100.000000}
@@ -29921,7 +29921,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 58.446453, y: 22.833347, z: -0.000008}
+    Position: {x: -0.585522, y: 22.833347, z: -0.000008}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -29939,9 +29939,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -17.981930, y: 5.868782, z: -14.032150}
+    Position: {x: -31.005795, y: 5.868782, z: -60.000000}
     Rotation: {x: 0.000000, y: 20.000010, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.400000, y: 1.400000, z: 1.400000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 7f37d574-9656-413e-86dd-df2a0a4985ec
@@ -31743,7 +31743,7 @@
   PrefabRemaps:
     []
   Name: CelebrationScreen
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 2.000000, y: -10.000000, z: -60.000000}
@@ -34324,9 +34324,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -11.644882, y: 0.000000, z: 0.099998}
+    Position: {x: -11.000000, y: 0.000000, z: 0.099991}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 3.000000, y: 3.000000, z: 3.000000}
+    Scale: {x: 2.000000, y: 2.000000, z: 2.000000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -35152,7 +35152,7 @@
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
-  FontSize: 100
+  FontSize: 80
   Font: !<reference> d5f28ad2-fdd2-46e3-979b-305e32f4ae73
   LayoutRect:
     left: -7.500000
@@ -35626,7 +35626,7 @@
   Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Position: {x: 0.600000, y: 8.603508, z: -92.364975}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -37498,7 +37498,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: -21.697609, z: -1.736292}
+    Position: {x: 0.000000, y: -21.697609, z: -1.736290}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -38805,7 +38805,7 @@
   ShowEditingPreview: true
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
-  FontSize: 100
+  FontSize: 80
   Font: !<reference> d5f28ad2-fdd2-46e3-979b-305e32f4ae73
   LayoutRect:
     left: -7.500000
@@ -42236,7 +42236,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -8.000000, y: 0.000000, z: 0.100000}
+    Position: {x: -8.000000, y: 0.000000, z: 0.150000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 3.000000, y: 3.000000, z: 3.000000}
     HasSegmentScaleCompensation: false
@@ -54077,7 +54077,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 35.200001, y: 8.000000, z: 0.000000}
+    Position: {x: 35.200001, y: 8.000000, z: 0.100000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -55495,7 +55495,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 34.183605, y: 23.200001, z: -50.000000}
+    Position: {x: 35.862820, y: 25.319607, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -57497,7 +57497,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 35.200001, y: 18.500000, z: 0.000000}
+    Position: {x: 35.200001, y: 18.500000, z: 0.100000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -58386,7 +58386,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 6.424263, z: -50.000000}
+    Position: {x: 0.000000, y: 6.424263, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 15.000000, y: 15.000000, z: 15.000000}
     HasSegmentScaleCompensation: false
@@ -64259,7 +64259,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 34.183605, y: 23.200001, z: -50.000000}
+    Position: {x: 35.830608, y: 25.500000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
@@ -64888,7 +64888,7 @@
   PrefabRemaps:
     []
   Name: Image
-  Enabled: true
+  Enabled: false
   RenderOrder: 0
   StretchMode: Fit
   VerticalAlignment: Center
