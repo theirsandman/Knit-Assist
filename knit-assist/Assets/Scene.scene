@@ -24040,6 +24040,8 @@
       iterationScreen: !<reference.SceneObject> 0208241a-5be3-45a0-88da-0b798f8a1f2c
       selectedPatternLabel: !<reference.Text> 617a1666-5ca9-41c7-97c7-627cd8ff3a66
       selectedDiffLabel: !<reference.Text> 86bc27c9-efa6-48f7-aa11-5965c835839f
+      cardImage: !<reference.Image> ef73d4ce-a45d-4a6a-81fc-1da030e5d05b
+      patternThumbnail: !<reference.Texture> 39914fdb-570f-4c53-9ba3-3d3663d65219
       patternName: Crab Pattern
       difficultyLabel: Hard
       patternIndex: !<float> 2.000000
@@ -32365,6 +32367,8 @@
       iterationScreen: !<reference.SceneObject> 0208241a-5be3-45a0-88da-0b798f8a1f2c
       selectedPatternLabel: !<reference.Text> 9c4cecd9-9bed-44ba-900f-5cf496be3f4c
       selectedDiffLabel: !<reference.Text> 0a283f83-5a0b-41a1-a285-f07ba87af144
+      cardImage: !<reference.Image> 7b5c89a5-bfcd-4dd2-8f59-8f100c2aca01
+      patternThumbnail: !<reference.Texture> 4c192f93-92e6-49fa-8645-78b937f7d355
       patternName: Overlapping Pattern
       difficultyLabel: Medium
       patternIndex: !<float> 1.000000
@@ -62000,6 +62004,8 @@
       iterationScreen: !<reference.SceneObject> 0208241a-5be3-45a0-88da-0b798f8a1f2c
       selectedPatternLabel: !<reference.Text> 94ae03d1-650b-483f-9ff2-c57a108d33f6
       selectedDiffLabel: !<reference.Text> f0c5cd6b-6d5a-4765-8c00-799e710f1652
+      cardImage: !<reference.Image> 2f3e571f-8235-4c62-9090-996162dce428
+      patternThumbnail: !<reference.Texture> b2ce2fea-a1ee-4610-ba73-370eb7535f0d
       patternName: Square Pattern
       difficultyLabel: Easy
       patternIndex: !<float> 0.000000

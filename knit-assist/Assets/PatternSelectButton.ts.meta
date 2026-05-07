@@ -26,11 +26,13 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    cardImage: false
     difficultyLabel: false
     iterationScreen: false
     newProjectScreen: false
     patternIndex: false
     patternName: false
+    patternThumbnail: false
     selectedDiffLabel: false
     selectedPatternLabel: false
   ScriptTypesHidden:
@@ -46,6 +48,8 @@
       iterationScreen: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       selectedPatternLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
       selectedDiffLabel: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      cardImage: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      patternThumbnail: !<reference.Texture> 00000000-0000-0000-0000-000000000000
       patternName: Pattern Title
       difficultyLabel: Easy
       patternIndex: !<float> 0.000000
@@ -57,6 +61,8 @@
     - // @input SceneObject iterationScreen
     - // @input Component.Text selectedPatternLabel
     - // @input Component.Text selectedDiffLabel
+    - // @input Component.Image cardImage
+    - // @input Asset.Texture patternThumbnail
     - '// @input string patternName = "Pattern Title"'
     - '// @input string difficultyLabel = "Easy"'
     - // @input float patternIndex
